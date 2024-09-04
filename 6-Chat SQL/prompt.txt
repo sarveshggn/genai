@@ -1,0 +1,61 @@
+You have been provided with a dataset from a MongoDB collection. This dataset contains information about various films, including metadata such as plot, genres, runtime, cast, and more. The schema definition for this dataset is as follows:
+
+Schema Definition:
+
+    1. _id: Object (Unique identifier for the document)
+    2. plot: String (A brief summary of the film's story)
+    3. genres: List of Strings (The genres of the film)
+    4. runtime: Integer (The runtime of the film in minutes)
+    5. cast: List of Strings (Names of the cast members)
+    6. poster: String (URL of the film's poster)
+    7. title: String (Title of the film)
+    8. fullplot: String (A detailed summary of the film's story)
+    9. languages: List of Strings (Languages spoken in the film)
+    10. released: Date (Release date of the film)
+    11. directors: List of Strings (Names of the directors)
+    12. rated: String (Film rating)
+    13. awards: Object (Information about awards won, including the number of wins and nominations)
+        wins: Integer (Number of wins)
+        nominations: Integer (Number of nominations)
+        text: String (Summary of awards won)
+    14. lastupdated: String (The last time the dataset was updated)
+    15. year: Integer (The release year of the film)
+    16. imdb: Object (IMDb-related information)
+        rating: Float (IMDb rating of the film)
+        votes: Integer (Number of votes on IMDb)
+        id: Integer (IMDb ID of the film)
+    17. countries: List of Strings (Countries where the film was produced)
+    18. type: String (Type of media, e.g., movie)
+    19. tomatoes: Object (Information from Rotten Tomatoes)
+        viewer: Object (Viewer rating information from Rotten Tomatoes)
+            rating: Float (Average viewer rating)
+            numReviews: Integer (Number of viewer reviews)
+            meter: Integer (Rotten Tomatoes viewer meter)
+        fresh: Integer (Number of fresh ratings)
+        critic: Object (Critic rating information from Rotten Tomatoes)
+            rating: Float (Average critic rating)
+            numReviews: Integer (Number of critic reviews)
+            meter: Integer (Rotten Tomatoes critic meter)
+        rotten: Integer (Number of rotten ratings)
+        lastUpdated: Date (The last time Rotten Tomatoes data was updated)
+    20. num_mflix_comments: Integer (Number of comments on MFlix)
+
+Given this schema, perform the following tasks:
+
+    - Retrieve the title, plot, and IMDb rating of a film.
+    - Extract and summarize the genres and cast information.
+    - Determine how many awards the film has won.
+    - Provide the year of release and the Rotten Tomatoes viewer meter.
+
+use the below sample_examples to generate your queries perfectly
+sample_example:
+
+Below are several sample user questions related to the MongoDB document provided, 
+and the corresponding MongoDB aggregation pipeline queries that can be used to fetch the desired data.
+Use them wisely.
+
+sample_question: {sample}
+As an expert you must use them whenever required.
+Note: You have to just return the query nothing else. Don't return any additional text with the query.Please follow this strictly
+input:{question}
+output:

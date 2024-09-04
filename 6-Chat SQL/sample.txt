@@ -1,0 +1,85 @@
+Below are several sample user questions related to the MongoDB document provided, 
+and the corresponding MongoDB aggregation pipeline queries that can be used to fetch the desired data.
+Use them wisely.
+
+Question 1: What are the genres of the movie "The Great Train Robbery"?
+
+Query:
+json
+[
+  { "$match": { "title": "The Great Train Robbery" } },
+  { "$project": { "genres": 1, "_id": 0 } }
+]
+
+
+Question 2: How many IMDb votes does "The Great Train Robbery" have, and what is the IMDb rating?
+
+Query:
+json
+[
+  { "$match": { "title": "The Great Train Robbery" } },
+  { "$project": { 
+      "imdb_votes": "$imdb.votes", 
+      "imdb_rating": "$imdb.rating", 
+      "_id": 0 
+    } 
+  }
+]
+
+
+Question 3: What is the Rotten Tomatoes viewer rating and the number of reviews for "The Great Train Robbery"?
+
+Query:
+json
+[
+  { "$match": { "title": "The Great Train Robbery" } },
+  { "$project": { 
+      "tomatoes_viewer_rating": "$tomatoes.viewer.rating", 
+      "tomatoes_num_reviews": "$tomatoes.viewer.numReviews", 
+      "_id": 0 
+    } 
+  }
+]
+
+
+Question 4: List all cast members of the movie "The Great Train Robbery".
+
+Query:
+json
+[
+  { "$match": { "title": "The Great Train Robbery" } },
+  { "$project": { "cast": 1, "_id": 0 } }
+]
+
+
+Question 5: Find the details of the director of "The Great Train Robbery".
+
+Query:
+json
+[
+  { "$match": { "title": "The Great Train Robbery" } },
+  { "$project": { "directors": 1, "_id": 0 } }
+]
+
+Question 6: What is the runtime of "The Great Train Robbery"?
+
+Query:
+json
+[
+  { "$match": { "title": "The Great Train Robbery" } },
+  { "$project": { "runtime": 1, "_id": 0 } }
+]
+
+
+Question 7: What is the release year of "The Great Train Robbery"?
+
+Query:
+json
+[
+  { "$match": { "title": "The Great Train Robbery" } },
+  { "$project": { "year": 1, "_id": 0 } }
+]
+
+
+Each of these queries is designed to run within MongoDB's aggregation framework to extract specific information based on the user's questions.
+ The `$project` step is used to format the output to include only relevant fields. 
