@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 os.environ["LANGCHAIN_TRACING_V2"]="true"
-os.environ["LANGCHAIN_API_KEY"]="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"
+os.environ["LANGCHAIN_API_KEY"]="LANGCHAIN_API_KEY"
 
 ## Prompt Template
 
